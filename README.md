@@ -1,2 +1,2 @@
 ### Backend of MyPerfumes website
-To run the backend simply run `npm start` in the terminal
+To run the backend, run `npm start` in the terminal.
