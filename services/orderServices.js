@@ -51,13 +51,13 @@ export const placeOrderService = async (
     const transporter = nodemailer.createTransport({
       service: "outlook",
       auth: {
-        user: "abdulahadhaq@outlook.com",
+        user: process.env.EMAIL,
         pass: process.env.PASS,
       },
     });
 
     const mailOptions = {
-      from: "abdulahadhaq@outlook.com",
+      from: process.env.EMAIL,
       to: customer_email,
       subject: "Order Confirmation",
       text: `Dear ${customer_name},\n\nThank you for your order. Your order ID is ${newOrder._id}. We'll further let you know about your order.\n\nBest regards,\nMyPerfumes`,
