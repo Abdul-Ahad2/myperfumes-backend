@@ -21,7 +21,7 @@ export const createUserService = async (_id, username, email) => {
   try {
     const user = await userModel.findOne({ _id: _id });
     if (user) {
-      return { status: 200, data: "Signed in" };
+      return { status: 200, data: "User already exists" };
     }
     const newUser = new userModel({
       _id: _id,
@@ -32,6 +32,6 @@ export const createUserService = async (_id, username, email) => {
     await newUser.save();
     return { status: 200, data: "User created successfully" };
   } catch (error) {
-    return error;
+    return { status: 400, data: "Internal Issue. Please try again later." };
   }
 };
