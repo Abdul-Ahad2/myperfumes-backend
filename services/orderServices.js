@@ -49,7 +49,7 @@ export const placeOrderService = async (
     await newPayment.save();
 
     const transporter = nodemailer.createTransport({
-      service: "outlook",
+      service: "gmail",
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASS,
@@ -65,7 +65,7 @@ export const placeOrderService = async (
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return { status: 300, data: "Enter a valid email address" };
+        console.log("Email error: ", error);
       } else {
         console.log("Email sent:", info.response);
       }
