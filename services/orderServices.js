@@ -49,7 +49,7 @@ export const placeOrderService = async (
     await newPayment.save();
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: "outlook",
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASS,
