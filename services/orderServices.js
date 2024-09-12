@@ -1,6 +1,6 @@
 import orderModel from "../models/orderModel.js";
 import orderItemModel from "../models/orderItemModel.js";
-import paymentModel from "../models/PaymentModel.js";
+import paymentModel from "../models/paymentModel.js";
 import cartModel from "../models/cartModel.js";
 import nodemailer from "nodemailer";
 
